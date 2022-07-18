@@ -1,0 +1,9 @@
+{
+    "BlogId":2,
+    "BlogName":"Machine Learning in Amazon",
+    "BlogContent":"Importance of ML Everywhere Anytime",
+    "BlogTag":"ML",
+    "PostDate":"2020-08-12",
+    "BlogUserId":2
+}
+

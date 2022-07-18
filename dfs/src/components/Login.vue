@@ -79,34 +79,42 @@
 export default {
   data() {
     return {
+
+      users : [],
       form: {
         email: "",
         //   name: '',
         password: "",
       },
       show: true,
-    };
+    }
   },
 
   mounted() {
     // console.log(db);
+    axios.get(server.API_URL + "user").then((response) => {
+        this.users = response.data;
+    });
   },
+
   methods: {
     onSubmit(event) {
       event.preventDefault();
       // alert(JSON.stringify(this.form))
-      console.log(this.form);
-      let users = this.$store.state.users;
-      let user = users.filter((element) => {
-        if (element.username == this.form.email) {
+      // console.log(this.form);
+      // let users = this.$store.state.users;
+      // console.log(this.users);
+
+      let user = this.users.filter((element) => {
+        if (element.UserName == this.form.email) {
           return true;
         }
 
         return false;
-      })[0];
+      })[0]
 
-      // console.log(user[0], this.form.password);
-      if(user.password != this.form.password)
+      console.log(user, this.form.password);
+      if(user.UserPassword != this.form.password)
       {
         alert('Login Failed');
       }
