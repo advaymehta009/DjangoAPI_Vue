@@ -4,7 +4,7 @@ from UserBlog.models import Users, Blog
 class UsersSerializer(serializers.ModelSerializer):
     class Meta:
         model=Users
-        fields=('UserId', 'UserName')
+        fields=('UserId', 'UserName', 'UserPassword')
 
 class BlogSerializer(serializers.ModelSerializer):
     class Meta:

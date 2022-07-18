@@ -6,6 +6,7 @@ from django.db import models
 class Users(models.Model):
     UserId = models.AutoField(primary_key=True)
     UserName = models.CharField(max_length=500)
+    UserPassword = models.CharField(max_length=8)
 
 class Blog(models.Model):
     BlogId = models.AutoField(primary_key=True)
@@ -14,7 +15,3 @@ class Blog(models.Model):
     BlogTag = models.CharField(max_length=500)
     PostDate = models.DateField()
     BlogUserId = models.IntegerField(null=False)
-
-
-
-    
