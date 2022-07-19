@@ -207,12 +207,12 @@ export default {
 
     console.log("route", this.$route.query.action);
     if (this.$route.query.action == "login") {
-      this.user = this.$route.query.data;
+      this.$store.state.users = this.$route.query.data;
       this.logged = false;
     }
     console.log("log", this.logged);
 
-    // this.users = this.$store.state.users;
+   
     
     console.log("this.usrs:", this.user);
   },
